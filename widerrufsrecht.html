@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+    <title>Widerrufsrecht - Werkfix Saar</title>
+    
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-700);
+            background-color: var(--light);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            padding: 1rem 0;
+            margin-bottom: 3rem;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: var(--dark);
+        }
+        
+        .logo svg {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+        
+        .logo-text .werkfix {
+            font-size: 1.25rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+        
+        .logo-text .saar {
+            font-size: 1.25rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            margin-top: -0.1em;
+        }
+        
+        .back-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .back-link:hover {
+            color: var(--primary-light);
+        }
+        
+        .content {
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
+        }
+        
+        h1 {
+            color: var(--dark);
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        
+        h2 {
+            color: var(--dark);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .info-block {
+            background: var(--gray-100);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+        }
+        
+        .info-block p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-block p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .important-box {
+            background-color: #dbeafe;
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 6px 6px 0;
+        }
+        
+        .form-section {
+            background-color: var(--gray-100);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 6px;
+        }
+        
+        .form-section h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        
+        .form-text {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.8;
+            background-color: white;
+            padding: 1.5rem;
+            border: 2px dashed #cbd5e1;
+            border-radius: 6px;
+            margin-top: 1rem;
+        }
+        
+        .download-button {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 1.5rem;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+        
+        .download-button:hover {
+            background-color: var(--primary-light);
+        }
+        
+        strong {
+            color: var(--dark);
+        }
+        
+        .footer-note {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+            color: var(--gray-600);
+            font-size: 0.875rem;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                padding: 2rem 1.5rem;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+            
+            h2 {
+                font-size: 1.25rem;
+            }
+            
+            .form-section {
+                padding: 1.5rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M40 80 L100 30 L160 80 L160 150 L40 150 Z" fill="none" stroke="#1e3a8a" stroke-width="8"/>
+                        <rect x="70" y="100" width="60" height="50" fill="#1e3a8a"/>
+                        <g transform="translate(100, 100) rotate(45)">
+                            <rect x="-5" y="-40" width="10" height="60" fill="#1e3a8a"/>
+                            <circle cx="0" cy="-40" r="15" fill="none" stroke="#1e3a8a" stroke-width="8"/>
+                            <rect x="-10" y="20" width="20" height="15" rx="5" fill="#1e3a8a"/>
+                        </g>
+                    </svg>
+                    <div class="logo-text">
+                        <span class="werkfix">WERKFIX</span>
+                        <span class="saar">SAAR</span>
+                    </div>
+                </a>
+                <a href="index.html" class="back-link">← Zurück zur Startseite</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="content">
+                <h1>Widerrufsrecht</h1>
+                
+                <div class="important-box">
+                    <strong>Wichtiger Hinweis:</strong> Das Widerrufsrecht gilt für Verbraucher bei Verträgen, die außerhalb von Geschäftsräumen oder im Fernabsatz (z.B. online, telefonisch) geschlossen wurden.
+                </div>
+                
+                <h2>Widerrufsbelehrung</h2>
+                
+                <p><strong>Widerrufsrecht</strong></p>
+                <p>Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.</p>
+                
+                <p>Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag des Vertragsabschlusses.</p>
+                
+                <p>Um Ihr Widerrufsrecht auszuüben, müssen Sie uns</p>
+                
+                <div class="info-block">
+                    <p><strong>Jan Niclas Breyer</strong></p>
+                    <p>Werkfix Saar</p>
+                    <p>Feldmannstr. 60</p>
+                    <p>66119 Saarbrücken</p>
+                    <p><strong>Telefon:</strong> +49 151 2942 4649</p>
+                    <p><strong>E-Mail:</strong> info@werkfixsaar.de</p>
+                </div>
+                
+                <p>mittels einer eindeutigen Erklärung (z.B. ein mit der Post versandter Brief, Telefax oder E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Sie können dafür das beigefügte Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist.</p>
+                
+                <p>Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden.</p>
+                
+                <h2>Folgen des Widerrufs</h2>
+                
+                <p>Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, einschließlich der Lieferkosten (mit Ausnahme der zusätzlichen Kosten, die sich daraus ergeben, dass Sie eine andere Art der Lieferung als die von uns angebotene, günstigste Standardlieferung gewählt haben), unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses Vertrags bei uns eingegangen ist.</p>
+                
+                <p>Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart; in keinem Fall werden Ihnen wegen dieser Rückzahlung Entgelte berechnet.</p>
+                
+                <p>Haben Sie verlangt, dass die Dienstleistungen während der Widerrufsfrist beginnen soll, so haben Sie uns einen angemessenen Betrag zu zahlen, der dem Anteil der bis zu dem Zeitpunkt, zu dem Sie uns von der Ausübung des Widerrufsrechts hinsichtlich dieses Vertrags unterrichten, bereits erbrachten Dienstleistungen im Vergleich zum Gesamtumfang der im Vertrag vorgesehenen Dienstleistungen entspricht.</p>
+                
+                <h2>Ausschluss des Widerrufsrechts</h2>
+                
+                <p>Das Widerrufsrecht besteht nicht bei Verträgen zur Erbringung von Dienstleistungen, wenn der Unternehmer die Dienstleistung vollständig erbracht hat und mit der Ausführung der Dienstleistung erst begonnen hat, nachdem der Verbraucher dazu seine ausdrückliche Zustimmung gegeben hat und gleichzeitig seine Kenntnis davon bestätigt hat, dass er sein Widerrufsrecht bei vollständiger Vertragserfüllung durch den Unternehmer verliert.</p>
+                
+                <p>Das Widerrufsrecht besteht insbesondere nicht bei:</p>
+                <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                    <li>Verträgen zur Lieferung von Waren, die nach Kundenspezifikation angefertigt werden oder eindeutig auf die persönlichen Bedürfnisse zugeschnitten sind</li>
+                    <li>Verträgen zur Erbringung von Dienstleistungen in den Bereichen Beherbergung zu anderen Zwecken als zu Wohnzwecken, Beförderung von Waren, Kraftfahrzeugvermietung, Lieferung von Speisen und Getränken sowie zur Erbringung weiterer Dienstleistungen im Zusammenhang mit Freizeitbetätigungen, wenn der Vertrag für die Erbringung einen spezifischen Termin oder Zeitraum vorsieht</li>
+                    <li>dringenden Reparatur- oder Instandhaltungsarbeiten</li>
+                </ul>
+                
+                <div class="form-section">
+                    <h3>Muster-Widerrufsformular</h3>
+                    <p>(Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie bitte dieses Formular aus und senden Sie es zurück.)</p>
+                    
+                    <div class="form-text">
+                        An<br>
+                        Jan Niclas Breyer<br>
+                        Werkfix Saar<br>
+                        Feldmannstr. 60<br>
+                        66119 Saarbrücken<br>
+                        E-Mail: info@werkfixsaar.de<br><br>
+                        
+                        Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über die Erbringung der folgenden Dienstleistung:<br><br>
+                        
+                        _________________________________________________<br><br>
+                        
+                        Bestellt am (*)/erhalten am (*):<br>
+                        _________________________________________________<br><br>
+                        
+                        Name des/der Verbraucher(s):<br>
+                        _________________________________________________<br><br>
+                        
+                        Anschrift des/der Verbraucher(s):<br>
+                        _________________________________________________<br><br>
+                        
+                        _________________________________________________<br><br>
+                        
+                        
+                        _________________________________________________<br>
+                        Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier)<br><br>
+                        
+                        Datum: _____________________<br><br>
+                        
+                        (*) Unzutreffendes streichen.
+                    </div>
+                    
+                    <a href="#" class="download-button" onclick="window.print(); return false;">📥 Widerrufsformular als PDF drucken</a>
+                </div>
+                
+                <div class="footer-note">
+                    <p>Stand: Dezember 2024 | Werkfix Saar - Alle Rechte vorbehalten</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
