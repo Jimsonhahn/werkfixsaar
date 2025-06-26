@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lernen Sie Werkfix Saar kennen - Ihr zuverlässiger Partner für Handwerksdienstleistungen im Saarland. Qualität, Zuverlässigkeit und faire Preise.">
+    <title>Über uns - Werkfix Saar</title>
+    
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-700);
+            background-color: var(--light);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            padding: 1rem 0;
+            margin-bottom: 3rem;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: var(--dark);
+        }
+        
+        .logo svg {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+        
+        .logo-text .werkfix {
+            font-size: 1.25rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+        
+        .logo-text .saar {
+            font-size: 1.25rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            margin-top: -0.1em;
+        }
+        
+        .back-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .back-link:hover {
+            color: var(--primary-light);
+        }
+        
+        .content {
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
+        }
+        
+        h1 {
+            color: var(--dark);
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        
+        h2 {
+            color: var(--dark);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        h3 {
+            color: var(--dark);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .intro-section {
+            font-size: 1.125rem;
+            color: var(--gray-700);
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .highlight-box h3 {
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .value-card {
+            background: var(--gray-100);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px -4px rgb(0 0 0 / 0.1);
+        }
+        
+        .value-card h3 {
+            color: var(--primary);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .value-icon {
+            font-size: 1.5rem;
+        }
+        
+        .services-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .services-list li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .services-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .services-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+        
+        .cta-section {
+            background: var(--primary);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .cta-section h2 {
+            color: white;
+            margin-top: 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact-info {
+            background: var(--gray-100);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+        }
+        
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-info p:last-child {
+            margin-bottom: 0;
+        }
+        
+        strong {
+            color: var(--dark);
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                padding: 2rem 1.5rem;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+            
+            h2 {
+                font-size: 1.25rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .intro-section {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M40 80 L100 30 L160 80 L160 150 L40 150 Z" fill="none" stroke="#1e3a8a" stroke-width="8"/>
+                        <rect x="70" y="100" width="60" height="50" fill="#1e3a8a"/>
+                        <g transform="translate(100, 100) rotate(45)">
+                            <rect x="-5" y="-40" width="10" height="60" fill="#1e3a8a"/>
+                            <circle cx="0" cy="-40" r="15" fill="none" stroke="#1e3a8a" stroke-width="8"/>
+                            <rect x="-10" y="20" width="20" height="15" rx="5" fill="#1e3a8a"/>
+                        </g>
+                    </svg>
+                    <div class="logo-text">
+                        <span class="werkfix">WERKFIX</span>
+                        <span class="saar">SAAR</span>
+                    </div>
+                </a>
+                <a href="index.html" class="back-link">← Zurück zur Startseite</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="content">
+                <h1>Über Werkfix Saar</h1>
+                
+                <div class="intro-section">
+                    <p><strong>Willkommen bei Werkfix Saar</strong> – Ihrem zuverlässigen Partner für Handwerksdienstleistungen im gesamten Saarland. Mit Sitz in Saarbrücken bieten wir Ihnen professionelle Lösungen rund um Haus, Garten und Immobilien.</p>
+                </div>
+
+                <h2>Wer steckt hinter Werkfix Saar?</h2>
+                <p>Mein Name ist <strong>Jan Niclas Breyer</strong>, und ich habe Werkfix Saar mit einer klaren Vision gegründet: Hochwertige Handwerksdienstleistungen zu fairen Preisen – schnell, flexibel und zuverlässig.</p>
+                
+                <p>Als gebürtiger Saarländer kenne ich die Region und ihre Menschen. Diese Verbundenheit spiegelt sich in meiner Arbeit wider: persönlich, direkt und immer mit dem Ziel, die beste Lösung für Sie zu finden.</p>
+
+                <div class="highlight-box">
+                    <h3>Unsere Mission</h3>
+                    <p>"Wir lösen Ihre handwerklichen Herausforderungen schnell und unkompliziert – damit Sie sich auf die wichtigen Dinge im Leben konzentrieren können."</p>
+                </div>
+
+                <h2>Unsere Werte</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <h3><span class="value-icon">🤝</span> Zuverlässigkeit</h3>
+                        <p>Termine werden eingehalten, Zusagen sind verbindlich. Sie können sich auf uns verlassen.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3><span class="value-icon">✨</span> Qualität</h3>
+                        <p>Saubere Arbeit und professionelle Ausführung sind für uns selbstverständlich.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3><span class="value-icon">💰</span> Fairness</h3>
+                        <p>Transparente Preise ohne versteckte Kosten. Sie wissen immer, wofür Sie bezahlen.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3><span class="value-icon">⚡</span> Flexibilität</h3>
+                        <p>Ob Notfall oder geplanter Termin – wir sind schnell zur Stelle, wenn Sie uns brauchen.</p>
+                    </div>
+                </div>
+
+                <h2>Unsere Leistungen im Überblick</h2>
+                <p>Von der kleinen Reparatur bis zum regelmäßigen Service – wir sind Ihr Ansprechpartner für:</p>
+                
+                <ul class="services-list">
+                    <li><strong>Gartenpflege & Außenanlagen:</strong> Rasenmähen, Heckenschnitt, Laubbeseitigung, Winterdienst</li>
+                    <li><strong>Hausmeisterservice:</strong> Regelmäßige Objektbetreuung, Kleinreparaturen, Kontrolldienste</li>
+                    <li><strong>Möbelmontage:</strong> Aufbau von Küchen, Schränken, Regalen – schnell und präzise</li>
+                    <li><strong>Airbnb & Ferienwohnungen:</strong> Schlüsselübergabe, Reinigung, Betreuung</li>
+                    <li><strong>Notdienst:</strong> Schnelle Hilfe bei dringenden Problemen</li>
+                    <li><strong>Individuelle Projekte:</strong> Sprechen Sie uns an – gemeinsam finden wir eine Lösung</li>
+                </ul>
+
+                <h2>Warum Werkfix Saar?</h2>
+                
+                <h3>🏠 Lokal verwurzelt</h3>
+                <p>Als Saarländer Unternehmen sind wir schnell vor Ort – in Saarbrücken, Saarlouis und Umgebung meist noch am selben Tag.</p>
+
+                <h3>📱 Moderne Kommunikation</h3>
+                <p>WhatsApp, E-Mail oder Telefon – Sie erreichen uns auf dem Weg, der für Sie am bequemsten ist.</p>
+
+                <h3>🔧 Ein Ansprechpartner für alles</h3>
+                <p>Keine komplizierten Strukturen – Sie haben einen direkten Ansprechpartner für all Ihre Anliegen.</p>
+
+                <h3>⭐ Kundenzufriedenheit</h3>
+                <p>Ihre Zufriedenheit ist unser Antrieb. Wir sind erst fertig, wenn Sie es sind.</p>
+
+                <div class="cta-section">
+                    <h2>Lernen Sie uns kennen!</h2>
+                    <p>Überzeugen Sie sich selbst von unserer Arbeitsweise. Kontaktieren Sie uns für ein unverbindliches Erstgespräch.</p>
+                    <a href="tel:+4915129424649" class="cta-button">📞 Jetzt anrufen</a>
+                </div>
+
+                <h2>Kontakt</h2>
+                <div class="contact-info">
+                    <p><strong>Werkfix Saar</strong></p>
+                    <p>Jan Niclas Breyer</p>
+                    <p>Feldmannstr. 60</p>
+                    <p>66119 Saarbrücken</p>
+                    <p><strong>Telefon:</strong> +49 151 2942 4649</p>
+                    <p><strong>E-Mail:</strong> info@werkfixsaar.de</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
