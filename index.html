@@ -762,6 +762,22 @@
             min-height: 120px;
         }
         
+        /* Form Success Message */
+        .form-success {
+            display: none;
+            background: var(--success);
+            color: white;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        .form-success.show {
+            display: block;
+        }
+        
         /* Footer */
         footer {
             background: var(--dark);
@@ -1599,7 +1615,16 @@
                 </div>
                 
                 <div class="contact-form">
-                    <form id="contact-form">
+                    <div class="form-success" id="form-success">
+                        Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.
+                    </div>
+                    
+                    <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+                        <input type="hidden" name="access_key" value="fcd4c459-ee6c-46dd-a7d1-af41719e3db2">
+                        <input type="hidden" name="subject" value="Neue Anfrage von Werkfix Saar Website">
+                        <input type="hidden" name="from_name" value="Werkfix Saar Kontaktformular">
+                        <input type="hidden" name="redirect" value="https://werkfixsaar.de/#contact">
+                        
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Name *</label>
@@ -1628,13 +1653,13 @@
                             <label for="service">Benötigte Leistung *</label>
                             <select id="service" name="service" required>
                                 <option value="">Bitte wählen...</option>
-                                <option value="hausmeister">Hausmeisterservice</option>
-                                <option value="garten">Gartenpflege</option>
-                                <option value="handwerk">Handwerksleistungen</option>
-                                <option value="montage">Möbelmontage</option>
-                                <option value="airbnb">Airbnb-Service</option>
-                                <option value="notdienst">Notdienst</option>
-                                <option value="sonstiges">Sonstiges</option>
+                                <option value="Hausmeisterservice">Hausmeisterservice</option>
+                                <option value="Gartenpflege">Gartenpflege</option>
+                                <option value="Handwerksleistungen">Handwerksleistungen</option>
+                                <option value="Möbelmontage">Möbelmontage</option>
+                                <option value="Airbnb-Service">Airbnb-Service</option>
+                                <option value="Notdienst">Notdienst</option>
+                                <option value="Sonstiges">Sonstiges</option>
                             </select>
                         </div>
                         
@@ -1769,34 +1794,16 @@
             });
         });
         
-        // Form Handling
-        const contactForm = document.getElementById('contact-form');
-        
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Collect form data
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
-            
-            // Create WhatsApp message
-            const message = `Neue Anfrage über die Website:%0A%0A` +
-                `Name: ${data.name}%0A` +
-                `Firma: ${data.company || 'Privat'}%0A` +
-                `Telefon: ${data.phone}%0A` +
-                `E-Mail: ${data.email}%0A` +
-                `Leistung: ${data.service}%0A` +
-                `Nachricht: ${data.message}`;
-            
-            // Open WhatsApp
-            window.open(`https://wa.me/4915129424649?text=${message}`, '_blank');
-            
-            // Show confirmation
-            alert('Vielen Dank für Ihre Anfrage! Sie werden zu WhatsApp weitergeleitet.');
-            
-            // Reset form
-            contactForm.reset();
-        });
+        // Check if form was just submitted
+        if (window.location.hash === '#contact' && window.location.search.includes('success')) {
+            const successMessage = document.getElementById('form-success');
+            if (successMessage) {
+                successMessage.classList.add('show');
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 5000);
+            }
+        }
         
         // Header scroll effect
         let lastScroll = 0;
