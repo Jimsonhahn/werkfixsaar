@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Werden Sie Partner von Werkfix Saar - Kooperationen für Handwerker, Immobilienverwaltungen und Gewerbetreibende im Saarland. Gemeinsam erfolgreich!">
+    <title>Partner werden - Werkfix Saar</title>
+    
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --success: #22c55e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-700);
+            background-color: var(--light);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            padding: 1rem 0;
+            margin-bottom: 3rem;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: var(--dark);
+        }
+        
+        .logo svg {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+        
+        .logo-text .werkfix {
+            font-size: 1.25rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+        
+        .logo-text .saar {
+            font-size: 1.25rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            margin-top: -0.1em;
+        }
+        
+        .back-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .back-link:hover {
+            color: var(--primary-light);
+        }
+        
+        .content {
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
+        }
+        
+        h1 {
+            color: var(--dark);
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        
+        h2 {
+            color: var(--dark);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        h3 {
+            color: var(--dark);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .intro-section {
+            font-size: 1.125rem;
+            color: var(--gray-700);
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .hero-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .hero-banner h1 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-banner p {
+            font-size: 1.125rem;
+            margin-bottom: 0;
+        }
+        
+        .partner-types {
+            display: grid;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .partner-card {
+            background: var(--gray-100);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .partner-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px -4px rgb(0 0 0 / 0.1);
+            border-color: var(--primary);
+        }
+        
+        .partner-card h3 {
+            color: var(--primary);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.25rem;
+        }
+        
+        .partner-icon {
+            font-size: 2rem;
+        }
+        
+        .benefits-list {
+            list-style: none;
+            margin: 1rem 0;
+        }
+        
+        .benefits-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.75rem;
+            position: relative;
+        }
+        
+        .benefits-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+        
+        .stats-section {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            padding: 3rem;
+            border-radius: 8px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-item h3 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        
+        .stat-item p {
+            margin: 0;
+            color: var(--gray-600);
+        }
+        
+        .process-section {
+            margin: 3rem 0;
+        }
+        
+        .process-steps {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .process-step {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .step-number {
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .step-content h4 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .cta-section {
+            background: var(--primary);
+            color: white;
+            padding: 3rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .cta-section h2 {
+            color: white;
+            margin-top: 0;
+        }
+        
+        .cta-section p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .cta-button.secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .contact-info {
+            background: var(--gray-100);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+        }
+        
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-info p:last-child {
+            margin-bottom: 0;
+        }
+        
+        strong {
+            color: var(--dark);
+        }
+        
+        .testimonial {
+            background: white;
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            box-shadow: var(--shadow);
+        }
+        
+        .testimonial-author {
+            margin-top: 1rem;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                padding: 2rem 1.5rem;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+            
+            h2 {
+                font-size: 1.25rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .intro-section {
+                font-size: 1rem;
+            }
+            
+            .hero-banner {
+                padding: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .cta-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M40 80 L100 30 L160 80 L160 150 L40 150 Z" fill="none" stroke="#1e3a8a" stroke-width="8"/>
+                        <rect x="70" y="100" width="60" height="50" fill="#1e3a8a"/>
+                        <g transform="translate(100, 100) rotate(45)">
+                            <rect x="-5" y="-40" width="10" height="60" fill="#1e3a8a"/>
+                            <circle cx="0" cy="-40" r="15" fill="none" stroke="#1e3a8a" stroke-width="8"/>
+                            <rect x="-10" y="20" width="20" height="15" rx="5" fill="#1e3a8a"/>
+                        </g>
+                    </svg>
+                    <div class="logo-text">
+                        <span class="werkfix">WERKFIX</span>
+                        <span class="saar">SAAR</span>
+                    </div>
+                </a>
+                <a href="index.html" class="back-link">← Zurück zur Startseite</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="hero-banner">
+                <h1>Gemeinsam stärker im Saarland</h1>
+                <p>Werden Sie Partner von Werkfix Saar und profitieren Sie von einem starken Netzwerk</p>
+            </div>
+
+            <div class="content">
+                <div class="intro-section">
+                    <p><strong>Sie suchen einen zuverlässigen Partner für Ihre handwerklichen Herausforderungen?</strong> Oder sind Sie selbst im Handwerk tätig und möchten von gemeinsamen Projekten profitieren? Bei Werkfix Saar finden Sie beides: einen verlässlichen Dienstleister und einen fairen Kooperationspartner.</p>
+                </div>
+
+                <h2>Unsere Partnerschaftsmodelle</h2>
+                
+                <div class="partner-types">
+                    <div class="partner-card">
+                        <h3><span class="partner-icon">🏢</span> Für Immobilienverwaltungen</h3>
+                        <p>Als Hausverwaltung oder Wohnungsbaugesellschaft brauchen Sie einen Partner, auf den Sie sich verlassen können. Wir bieten Ihnen:</p>
+                        <ul class="benefits-list">
+                            <li>24/7 Notdienst für Ihre Mieter</li>
+                            <li>Festpreise und Rahmenverträge</li>
+                            <li>Regelmäßige Objektbetreuung</li>
+                            <li>Digitale Auftragsabwicklung</li>
+                            <li>Monatliche Sammelrechnung</li>
+                        </ul>
+                        <p><strong>Ihre Vorteile:</strong> Ein Ansprechpartner für alle Gewerke, schnelle Reaktionszeiten, zufriedene Mieter.</p>
+                    </div>
+
+                    <div class="partner-card">
+                        <h3><span class="partner-icon">🏠</span> Für Airbnb & Ferienwohnungen</h3>
+                        <p>Vermieten Sie Ferienwohnungen? Wir kümmern uns um alles, damit Sie sich auf Ihre Gäste konzentrieren können:</p>
+                        <ul class="benefits-list">
+                            <li>Check-in/Check-out Service</li>
+                            <li>Professionelle Reinigung</li>
+                            <li>Wäschewechsel und Vorbereitung</li>
+                            <li>Notfallservice für Gäste</li>
+                            <li>Kleine Reparaturen sofort</li>
+                        </ul>
+                        <p><strong>Ihre Vorteile:</strong> Mehr 5-Sterne-Bewertungen, weniger Stress, höhere Auslastung.</p>
+                    </div>
+
+                    <div class="partner-card">
+                        <h3><span class="partner-icon">🔧</span> Für Handwerksbetriebe</h3>
+                        <p>Sie sind selbstständiger Handwerker oder haben einen Betrieb? Lassen Sie uns zusammenarbeiten:</p>
+                        <ul class="benefits-list">
+                            <li>Gegenseitige Auftragsvermittlung</li>
+                            <li>Gemeinsame Großprojekte</li>
+                            <li>Urlaubsvertretung</li>
+                            <li>Faire Konditionen</li>
+                            <li>Pünktliche Bezahlung</li>
+                        </ul>
+                        <p><strong>Ihre Vorteile:</strong> Volle Auftragsbücher, größere Projekte stemmen, Netzwerk ausbauen.</p>
+                    </div>
+
+                    <div class="partner-card">
+                        <h3><span class="partner-icon">🏪</span> Für Gewerbetreibende</h3>
+                        <p>Büros, Praxen, Läden – wir sind Ihr Partner für alle Facility-Services:</p>
+                        <ul class="benefits-list">
+                            <li>Regelmäßige Reinigung</li>
+                            <li>Wartung und Instandhaltung</li>
+                            <li>Winterdienst</li>
+                            <li>Flexible Vertragslaufzeiten</li>
+                            <li>Individuelle Leistungspakete</li>
+                        </ul>
+                        <p><strong>Ihre Vorteile:</strong> Konzentration aufs Kerngeschäft, kalkulierbare Kosten, ein Ansprechpartner.</p>
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <h2>Warum Partner von Werkfix Saar werden?</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <h3>100%</h3>
+                            <p>Zuverlässigkeit</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>24/7</h3>
+                            <p>Erreichbarkeit</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>Regional</h3>
+                            <p>Im Saarland verwurzelt</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <p>"Die Zusammenarbeit mit Werkfix Saar hat unseren Verwaltungsaufwand deutlich reduziert. Ein Anruf genügt und das Problem wird gelöst – egal ob Notfall oder Routinearbeit."</p>
+                    <div class="testimonial-author">- Beispiel Hausverwaltung GmbH, Saarbrücken</div>
+                </div>
+
+                <div class="process-section">
+                    <h2>So werden Sie Partner</h2>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Kontaktaufnahme</h4>
+                                <p>Rufen Sie uns an oder schreiben Sie uns. Wir besprechen Ihre Anforderungen und Wünsche.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Persönliches Gespräch</h4>
+                                <p>Bei einem Vor-Ort-Termin lernen wir uns kennen und definieren die Zusammenarbeit.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Individuelle Vereinbarung</h4>
+                                <p>Wir erstellen ein maßgeschneidertes Angebot mit fairen Konditionen für beide Seiten.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Start der Partnerschaft</h4>
+                                <p>Los geht's! Sie haben ab sofort einen zuverlässigen Partner an Ihrer Seite.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Unsere Partnervorteile auf einen Blick</h2>
+                <ul class="benefits-list">
+                    <li><strong>Bevorzugte Terminvergabe:</strong> Partner-Anfragen werden priorisiert behandelt</li>
+                    <li><strong>Spezialkonditionen:</strong> Attraktive Rahmenvertragspreise</li>
+                    <li><strong>Ein Ansprechpartner:</strong> Persönliche Betreuung durch Jan Niclas Breyer</li>
+                    <li><strong>Flexible Abrechnung:</strong> Monatliche Sammelrechnung oder Einzelabrechnung</li>
+                    <li><strong>Qualitätsgarantie:</strong> Versichert und zertifiziert</li>
+                    <li><strong>Regionale Nähe:</strong> Kurze Wege im Saarland</li>
+                </ul>
+
+                <div class="cta-section">
+                    <h2>Bereit für eine starke Partnerschaft?</h2>
+                    <p>Lassen Sie uns gemeinsam erfolgreich sein. Kontaktieren Sie uns für ein unverbindliches Erstgespräch.</p>
+                    <div class="cta-buttons">
+                        <a href="tel:+4915129424649" class="cta-button">📞 Jetzt anrufen</a>
+                        <a href="mailto:info@werkfixsaar.de?subject=Partnerschaftsanfrage" class="cta-button secondary">📧 E-Mail schreiben</a>
+                    </div>
+                </div>
+
+                <h2>Ihr direkter Kontakt</h2>
+                <div class="contact-info">
+                    <p><strong>Jan Niclas Breyer</strong></p>
+                    <p>Geschäftsführer Werkfix Saar</p>
+                    <p><strong>Telefon:</strong> +49 151 2942 4649</p>
+                    <p><strong>E-Mail:</strong> info@werkfixsaar.de</p>
+                    <p><strong>Adresse:</strong> Feldmannstr. 60, 66119 Saarbrücken</p>
+                </div>
+
+                <p style="text-align: center; margin-top: 3rem; font-style: italic; color: var(--gray-600);">
+                    "Gemeinsam schaffen wir mehr – für unsere Kunden und für die Region."
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
